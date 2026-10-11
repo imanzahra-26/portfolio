@@ -1,0 +1,81 @@
+/* ===== NAVBAR BASE ===== */
+.navbar {
+  position: fixed;              /* Stays at top while scrolling */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;                 /* Above everything else */
+  padding: 18px 0;
+  background: rgba(254, 254, 254, 0.75);  /* Semi-transparent white */
+  backdrop-filter: blur(12px);            /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(12px);    /* Safari support */
+  border-bottom: 1px solid var(--border); /* Subtle line at bottom */
+}
+
+/* ===== CONTAINER ===== */
+.navbar-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;                /* Logo left, links right */
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== LOGO ===== */
+.navbar-logo {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+
+.navbar-logo .dot {
+  color: var(--accent);         /* Indigo dot */
+}
+
+/* ===== NAV LINKS ===== */
+.navbar-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;             /* No bullet points */
+}
+
+.navbar-links a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  position: relative;           /* Needed for ::after positioning */
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--text);           /* Darker on hover */
+}
+
+/* Animated gradient underline on hover */
+.navbar-links a::after {
+  content: '';                  /* Required for pseudo-elements */
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;                     /* Starts hidden */
+  height: 2px;
+  background: var(--gradient);
+  transition: width 0.3s ease;  /* Animates width */
+}
+
+.navbar-links a:hover::after {
+  width: 100%;                  /* Expands to full width on hover */
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .navbar-links {
+    gap: 20px;                  /* Tighter spacing on mobile */
+  }
+  .navbar-links a {
+    font-size: 0.85rem;
+  }
+}

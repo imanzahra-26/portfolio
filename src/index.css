@@ -1,0 +1,106 @@
+/* ===== DESIGN SYSTEM ===== */
+/* Everything below is defined ONCE and reused everywhere */
+:root {
+  /* --- COLORS (soft, cool, premium) --- */
+  --bg: #fafbfc;              /* Soft cool white (hero, skills, contact) */
+  --bg-alt: #f5f7fa;          /* Soft cool gray (about, projects, footer) */
+  --surface: #ffffff;          /* Pure white cards */
+  --border: #e8ecf2;           /* Soft cool border */
+  --text: #1a1a2e;             /* Deep navy */
+  --text-muted: #6b7280;       /* Medium gray */
+  --accent: #6366f1;           /* Indigo */
+  --accent-pink: #ec4899;      /* Pink (accents only) */
+  --accent-cyan: #06b6d4;      /* Cyan (accents only) */
+  --gradient: linear-gradient(135deg, #6366f1, #ec4899, #06b6d4);
+
+  /* --- FONTS --- */
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Poppins', system-ui, sans-serif;
+
+  /* --- SPACING --- */
+  --section-padding: 100px 24px;
+  --container: 1100px;
+
+  /* --- RADIUS --- */
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-lg: 24px;
+
+  /* --- SHADOWS --- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 40px rgba(99, 102, 241, 0.12);
+}
+
+/* ===== RESET ===== */
+/* Remove browser default styles so our design is consistent */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;      /* Width includes padding + border */
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;       /* No underline by default */
+  color: inherit;              /* Inherit parent color */
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== UTILITY CLASSES ===== */
+/* Reusable helper classes */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;              /* Centers the container */
+  padding: 0 24px;
+}
+
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;  /* Clips gradient to text shape */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+/* Smooth color transitions */
+body, section, .footer {
+  transition: background-color 0.3s ease;
+}
+/* Subtle note shown when a project has no public link */
+.project-note {
+  font-size: 13px;
+  color: #9ca3af;
+  font-style: italic;
+}
