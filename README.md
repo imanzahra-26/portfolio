@@ -1,16 +1,37 @@
-# React + Vite
+# Iman Zahra — Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive personal portfolio website built with React + Vite, featuring smooth Framer Motion animations and a pastel-gradient aesthetic.
 
-Currently, two official plugins are available:
+## 🔗 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+_(Add your Vercel URL here after deployment — e.g. `https://iman-zahra.vercel.app`)_
 
-## React Compiler
+## ✨ Sections
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Hero** — name, title, animated intro
+- **About** — background, education, interests
+- **Skills** — frontend, backend, database, tools
+- **Projects** — featured works with GitHub & live links
+- **Contact** — email, phone, LinkedIn, GitHub
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 18 (Vite)
+- Framer Motion (animations)
+- React Router
+- Custom CSS (pastel gradient theme)
+
+## 📦 Run Locally
+
+```bash
+npm install
+npm run dev
+## 📸 Screenshots
+
+| Section | Preview |
+|---------|---------|
+| Hero | ![Home](screenshots/home.png) |
+| About | ![About](screenshots/about.png) |
+| Skills | ![Skills](screenshots/skills.png) |
+| Projects | ![Projects](screenshots/projects.png) |
+| Contact | ![Contact](screenshots/contact.png) |
