@@ -175,3 +175,15 @@
     font-size: 1.4rem;
   }
 }
+/* --- DARK MODE FIX FOR PROJECT CARDS --- */
+body.dark-theme .project-card {
+  background: var(--surface) !important;
+}
+body.dark-theme .featured-project {
+  background: var(--surface) !important;
+}
+body.dark-theme .tech-tag {
+  background: #334155 !important;
+  color: #f8fafc !important;
+  border-color: #475569 !important;
+}

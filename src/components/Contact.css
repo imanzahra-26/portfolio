@@ -113,3 +113,11 @@
     font-size: 1.5rem;
   }
 }
+/* --- DARK MODE FIX FOR CONTACT --- */
+body.dark-theme .contact-highlight {
+  background: var(--surface) !important;
+  border-left-color: var(--accent) !important;
+}
+body.dark-theme .contact-card {
+  background: var(--surface) !important;
+}
