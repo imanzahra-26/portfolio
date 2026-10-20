@@ -1,11 +1,10 @@
-// Navbar.jsx — Includes Dark/Light Mode Toggle as requested by Datheon
 import { useState, useEffect } from 'react';
 
 function Navbar() {
-  // State to track if we are in dark mode
+  // State to track if dark mode is on
   const [isDark, setIsDark] = useState(false);
 
-  // When the toggle changes, add/remove a class on the <body> tag
+  // When the toggle changes, add/remove the 'dark-theme' class on the <body>
   useEffect(() => {
     if (isDark) {
       document.body.classList.add('dark-theme');
@@ -16,25 +15,33 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="nav-logo">Iman Zahra.</div>
-      
-      <div className="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+      <div className="navbar-container">
         
-        {/* THE DARK MODE TOGGLE BUTTON */}
-        <button 
-          onClick={() => setIsDark(!isDark)} 
-          className="theme-toggle-btn"
-          title="Toggle Theme"
-        >
-          {isDark ? '☀️ Light' : '🌙 Dark'}
-        </button>
+        <a href="#home" className="navbar-logo">
+          Iman Zahra<span className="dot">.</span>
+        </a>
+
+        {/* Your exact list structure preserved */}
+        <ul className="navbar-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          
+          {/* THE THEME TOGGLE BUTTON */}
+          <li>
+            <button 
+              onClick={() => setIsDark(!isDark)} 
+              className="theme-toggle-btn"
+            >
+              {isDark ? '☀️ Light' : '🌙 Dark'}
+            </button>
+          </li>
+        </ul>
+
       </div>
     </nav>
-  );
+  )
 }
 
 export default Navbar;
