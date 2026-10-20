@@ -52,6 +52,24 @@
 .theme-toggle-btn:hover {
   opacity: 0.8;
 }
+/* =========================================
+   THEME TOGGLE BUTTON
+   ========================================= */
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-left: 15px;
+}
+.theme-toggle-btn:hover {
+  opacity: 0.8;
+}
 
 /* =========================================
    DARK THEME GLOBAL OVERRIDES 
@@ -76,13 +94,15 @@ body.dark-theme .navbar {
   border-bottom: 1px solid #334155 !important;
 }
 
-/* 4. Force ALL headings and paragraphs to be light text */
+/* 4. Force ALL headings, paragraphs, and spans to be light text */
 body.dark-theme h1,
 body.dark-theme h2,
 body.dark-theme h3,
+body.dark-theme h4,
 body.dark-theme p,
 body.dark-theme span,
-body.dark-theme a {
+body.dark-theme a,
+body.dark-theme li {
   color: #f8fafc !important;
 }
 
@@ -94,13 +114,33 @@ body.dark-theme .gradient-text {
   -webkit-text-fill-color: transparent !important;
 }
 
-/* 6. Fix your cards (About box, Projects) so they don't stay white */
+/* 6. Fix your Project Cards (Make them dark gray, not white) */
 body.dark-theme .project-card,
-body.dark-theme .featured-project,
-body.dark-theme .info-card, /* or whatever your About box class is */
-body.dark-theme .skills-card {
+body.dark-theme .featured-project {
   background-color: #1e293b !important; 
   border-color: #334155 !important;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4) !important;
+}
+
+/* 7. Fix the Tech Tags (React, Node, etc.) */
+body.dark-theme .tech-tag,
+body.dark-theme .project-tech span {
+  background-color: #334155 !important;
   color: #f8fafc !important;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3) !important;
+  border-color: #475569 !important;
+}
+
+/* 8. Fix the Contact Info Boxes (Email, LinkedIn, etc.) */
+body.dark-theme .contact-card,
+body.dark-theme .info-card,
+body.dark-theme .contact-box {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+/* 9. Fix the "Currently available for internships" purple banner */
+body.dark-theme .availability-banner,
+body.dark-theme .status-badge {
+  background-color: rgba(168, 85, 247, 0.2) !important; /* Darker purple */
+  color: #f8fafc !important;
 }
