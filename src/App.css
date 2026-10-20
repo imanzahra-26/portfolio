@@ -35,74 +35,74 @@
 }
 .theme-toggle-btn:hover {
   background: rgba(128, 128, 128, 0.1);
+}/* =========================================
+   THEME VARIABLES & DARK MODE OVERRIDES
+   ========================================= */
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1f2937;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
 }
-/* --- THEME TOGGLE BUTTON --- */
+
+body.dark-theme {
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+  --card-bg: #1e293b;
+  --card-border: #334155;
+}
+
+/* Base Body */
+body {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* =========================================
+   THEME TOGGLE BUTTON STYLE
+   ========================================= */
 .theme-toggle-btn {
   background: transparent;
-  border: 1px solid currentColor;
-  color: inherit;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
   padding: 6px 12px;
   border-radius: 20px;
   cursor: pointer;
   font-weight: bold;
   font-size: 0.9rem;
-  transition: all 0.3s ease;
   margin-left: 15px;
+  transition: all 0.3s ease;
 }
 .theme-toggle-btn:hover {
-  opacity: 0.8;
-}/* =========================================
-   DARK THEME GLOBAL OVERRIDES 
-   ========================================= */
-
-/* 1. Force the main background and text color */
-body.dark-theme {
-  background-color: #0f172a !important; 
-  color: #f8fafc !important;            
+  opacity: 0.7;
+}
+/* Fix Navbar */
+body.dark-theme .navbar {
+  background-color: var(--card-bg) !important;
+  border-bottom: 1px solid var(--card-border) !important;
+}
+body.dark-theme .navbar-links a,
+body.dark-theme .navbar-logo {
+  color: var(--text-color) !important;
 }
 
-/* 2. Force ALL headings, paragraphs, and spans to be light text */
+/* Fix Headings and Text globally */
 body.dark-theme h1,
 body.dark-theme h2,
 body.dark-theme h3,
 body.dark-theme h4,
-body.dark-theme p,
-body.dark-theme span,
-body.dark-theme a,
-body.dark-theme li {
-  color: #f8fafc !important;
+body.dark-theme p {
+  color: var(--text-color) !important;
 }
 
-/* 3. Make the Navbar dark */
-body.dark-theme .navbar {
-  background-color: #1e293b !important;
-  border-bottom: 1px solid #334155 !important;
-}
-
-/* 4. THE MAGIC FIX: Force ALL containers with a background color to turn dark gray */
-/* This targets your project cards, about me box, contact boxes, etc. */
-body.dark-theme div[class*="card"],
-body.dark-theme div[class*="project"],
-body.dark-theme div[class*="box"],
-body.dark-theme div[class*="featured"],
-body.dark-theme div[class*="info"] {
-  background-color: #1e293b !important; /* Dark gray card */
-  border-color: #334155 !important;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.4) !important;
-}
-
-/* 5. Fix the Tech Tags (React, Node, etc.) inside the dark cards */
-body.dark-theme .tech-tag,
-body.dark-theme .project-tech span {
-  background-color: #334155 !important; /* Lighter gray tag */
-  color: #f8fafc !important;
-  border: 1px solid #475569 !important;
-}
-
-/* 6. Keep the gradient text looking nice */
-body.dark-theme .gradient-text {
-  background: linear-gradient(90deg, #a855f7, #ec4899) !important;
-  background-clip: text !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
+/* Fix Cards (Projects, About info box, Contact boxes) */
+body.dark-theme .project-card, 
+body.dark-theme .featured-project,
+body.dark-theme .info-card,
+body.dark-theme .contact-card {
+  background-color: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+  color: var(--text-color) !important;
 }
