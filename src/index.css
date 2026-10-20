@@ -104,3 +104,31 @@ body, section, .footer {
   color: #9ca3af;
   font-style: italic;
 }
+
+/* Basic Dark Theme override for Datheon Requirement */
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+body.dark-theme .navbar {
+  background-color: #1e1e1e;
+}
+body.dark-theme .project-card, 
+body.dark-theme .featured-project {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-color: #333;
+}
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid #7c3aed;
+  color: #7c3aed;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+body.dark-theme .theme-toggle-btn {
+  color: #fff;
+  border-color: #fff;
+}
