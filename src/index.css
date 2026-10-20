@@ -132,3 +132,51 @@ body.dark-theme .theme-toggle-btn {
   color: #fff;
   border-color: #fff;
 }
+/* --- THEME TOGGLE BUTTON --- */
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--text, #333);
+  color: var(--text, #333);
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.theme-toggle-btn:hover {
+  background: rgba(128, 128, 128, 0.1);
+}
+
+/* --- DARK THEME OVERRIDES --- */
+/* When body has class 'dark-theme', change the background and text */
+body.dark-theme {
+  background-color: #0f172a !important; /* Dark blue/slate background */
+  color: #f8fafc !important;            /* Light text */
+}
+
+/* Change navbar background in dark mode */
+body.dark-theme .navbar {
+  background-color: #1e293b !important;
+  border-bottom: 1px solid #334155;
+}
+
+/* Change text colors for links and logo in dark mode */
+body.dark-theme .navbar-links a,
+body.dark-theme .navbar-logo {
+  color: #f8fafc !important;
+}
+
+/* Make the toggle button white in dark mode */
+body.dark-theme .theme-toggle-btn {
+  color: #f8fafc !important;
+  border-color: #f8fafc !important;
+}
+
+/* Update project cards for dark mode (if your cards use a class like .project-card) */
+body.dark-theme .project-card,
+body.dark-theme .featured-project {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+  color: #f8fafc !important;
+}

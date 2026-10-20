@@ -36,36 +36,71 @@
 .theme-toggle-btn:hover {
   background: rgba(128, 128, 128, 0.1);
 }
-
-/* --- DARK THEME OVERRIDES --- */
-/* When body has class 'dark-theme', change the background and text */
-body.dark-theme {
-  background-color: #0f172a !important; /* Dark blue/slate background */
-  color: #f8fafc !important;            /* Light text */
+/* --- THEME TOGGLE BUTTON --- */
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-left: 15px;
+}
+.theme-toggle-btn:hover {
+  opacity: 0.8;
 }
 
-/* Change navbar background in dark mode */
+/* =========================================
+   DARK THEME GLOBAL OVERRIDES 
+   ========================================= */
+
+/* 1. Force the main background and text color */
+body.dark-theme {
+  background-color: #0f172a !important; 
+  color: #f8fafc !important;            
+}
+
+/* 2. Force ALL sections and containers to be transparent or dark */
+body.dark-theme section,
+body.dark-theme div,
+body.dark-theme main {
+  background-color: transparent !important;
+}
+
+/* 3. Make the Navbar dark */
 body.dark-theme .navbar {
   background-color: #1e293b !important;
-  border-bottom: 1px solid #334155;
+  border-bottom: 1px solid #334155 !important;
 }
 
-/* Change text colors for links and logo in dark mode */
-body.dark-theme .navbar-links a,
-body.dark-theme .navbar-logo {
+/* 4. Force ALL headings and paragraphs to be light text */
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme p,
+body.dark-theme span,
+body.dark-theme a {
   color: #f8fafc !important;
 }
 
-/* Make the toggle button white in dark mode */
-body.dark-theme .theme-toggle-btn {
-  color: #f8fafc !important;
-  border-color: #f8fafc !important;
+/* 5. Keep your gradient text looking nice */
+body.dark-theme .gradient-text {
+  background: linear-gradient(90deg, #a855f7, #ec4899) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
-/* Update project cards for dark mode (if your cards use a class like .project-card) */
+/* 6. Fix your cards (About box, Projects) so they don't stay white */
 body.dark-theme .project-card,
-body.dark-theme .featured-project {
-  background-color: #1e293b !important;
+body.dark-theme .featured-project,
+body.dark-theme .info-card, /* or whatever your About box class is */
+body.dark-theme .skills-card {
+  background-color: #1e293b !important; 
   border-color: #334155 !important;
   color: #f8fafc !important;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3) !important;
 }
